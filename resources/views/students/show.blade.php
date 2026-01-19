@@ -81,7 +81,7 @@
 
             <!-- Action Buttons -->
             <div class="flex gap-4 mt-8">
-                <a href="/students/1/edit" class="flex-1 bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2 shadow-lg">
+                <a href="/students/{{ $student['id'] }}/edit" class="flex-1 bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2 shadow-lg">
                     <i class="fas fa-edit"></i>
                     <span>Edit Student</span>
                 </a>
