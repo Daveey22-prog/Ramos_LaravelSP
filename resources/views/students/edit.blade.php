@@ -16,7 +16,7 @@
 
     <!-- Form Card -->
     <div class="bg-white rounded-xl shadow-lg p-8">
-        <form action="/students/1" method="POST" class="space-y-6">
+        <form action="/students/{{ $student['id'] }}" method="POST" class="space-y-6">
             @csrf
             @method('PUT')
             
