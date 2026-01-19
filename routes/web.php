@@ -15,11 +15,49 @@ Route::get('/students/create', function () {
 });
 
 Route::get('/students/{id}', function ($id) {
-    return view('students.show');
+    $students = [
+        1 => [
+            'id' => 1,
+            'name' => 'Dave Ramos',
+            'email' => 'dave.ramos@example.com',
+            'course' => 'Information Technology',
+            'year_level' => '2nd Year'
+        ],
+        2 => [
+            'id' => 2,
+            'name' => 'Renz Tristan',
+            'email' => 'renz.tristan@example.com',
+            'course' => 'Business Administration',
+            'year_level' => '1st Year'
+        ]
+    ];
+
+    $student = $students[$id] ?? abort(404);
+
+    return view('students.show', compact('student'));
 });
 
 Route::get('/students/{id}/edit', function ($id) {
-    return view('students.edit');
+    $students = [
+        1 => [
+            'id' => 1,
+            'name' => 'Dave Ramos',
+            'email' => 'dave.ramos@example.com',
+            'course' => 'Information Technology',
+            'year_level' => '2nd Year'
+        ],
+        2 => [
+            'id' => 2,
+            'name' => 'Renz Tristan',
+            'email' => 'renz.tristan@example.com',
+            'course' => 'Business Administration',
+            'year_level' => '1st Year'
+        ]
+    ];
+
+    $student = $students[$id] ?? abort(404);
+
+    return view('students.edit', compact('student'));
 });
 
 Route::post('/students', function () {
